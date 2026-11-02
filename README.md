@@ -1,6 +1,6 @@
 # 06 · Probability, Bayes & why ROC-AUC lies on imbalanced data
 
-🇸🇰 [Slovenská verzia](README.sk.md)
+🇸🇰 [Slovenská verzia](README.sk.md) · 📘 [Step-by-step tutorial](TUTORIAL.md)
 
 ## TL;DR
 Three small simulations (fixed seed, every number below comes from `results.json`):

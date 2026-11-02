@@ -1,6 +1,6 @@
 # 06 · Pravdepodobnosť, Bayes a prečo ROC-AUC klame pri nevyvážených dátach
 
-🇬🇧 [English version](README.md)
+🇬🇧 [English version](README.md) · 📘 [Tutoriál krok za krokom](TUTORIAL.sk.md)
 
 ## TL;DR
 Tri malé simulácie (pevný seed, každé číslo nižšie pochádza z `results.json`):
