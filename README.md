@@ -10,6 +10,13 @@ Three small simulations (fixed seed, every number below comes from `results.json
 
 ![ROC vs precision-recall](assets/roc_vs_pr.png)
 
+## Start here
+Imagine a system that flags a rare event: disease, fraud, or a car crash. Even a fairly good system can produce many false alarms because there are far more people or situations without the event. **This task asks what a positive result means in that setting and which evaluation numbers are useful.**
+
+The script first simulates coin flips and dice to show why an average becomes less noisy with more data. It then calculates a medical-test example: among 1,000 people, roughly 10 are sick, yet about 50 healthy people also test positive. Under the stated assumptions, a positive test therefore means only about a 17% chance of disease.
+
+Finally, the script evaluates the **same** classifier on datasets with fewer and fewer positive cases. Its ROC-AUC stays similar, while the share of genuine cases among its alarms falls sharply. For rare events we also need **precision**: “how many of my alarms were correct?” These simulations prepare the choice of metrics in the customer-churn project.
+
 ## Problem
 The roadmap's goal for this step: *"explain why ROC-AUC lies on imbalanced data"*. The next project (P2, customer churn) is a classification problem where only a minority of customers leave. Choosing the wrong metric there means choosing the wrong model. To explain it properly I need three pieces of probability first:
 1. what a distribution, a mean and a variance are, and why more data means less noise;

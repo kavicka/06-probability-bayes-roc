@@ -10,6 +10,13 @@ Tri malé simulácie (pevný seed, každé číslo nižšie pochádza z `results
 
 ![ROC vs precision-recall](assets/roc_vs_pr.png)
 
+## Najprv jednoducho
+Predstav si systém, ktorý upozorňuje na zriedkavú udalosť: chorobu, podvod alebo nabúranie auta. Aj celkom dobrý systém môže vyvolať veľa falošných poplachov, pretože ľudí alebo situácií bez udalosti je omnoho viac. **Táto úloha skúma, čo vtedy znamená pozitívny výsledok a ktorým číslam pri hodnotení modelu veriť.**
+
+Skript najprv simuluje hody mincou a kockami, aby ukázal, prečo sa pri väčšom množstve dát priemer menej mení. Potom počíta príklad zdravotného testu: zo 1 000 ľudí je chorých asi 10, ale falošný pozitívny výsledok dostane aj približne 50 zdravých. Pozitívny test preto znamená len asi 17 % pravdepodobnosť choroby pri zvolených podmienkach.
+
+Nakoniec skript nechá **ten istý** klasifikátor hodnotiť dáta, v ktorých je pozitívnych čoraz menej. Graf ROC-AUC ostáva podobný, no podiel skutočných prípadov medzi poplachmi prudko klesá. Preto pri zriedkavých udalostiach sledujeme aj **precision**: „koľko z mojich poplachov bolo správnych?“ Tieto simulácie pripravujú výber metrík v projekte predpovedania odchodu zákazníkov.
+
 ## Problém
 Cieľ tohto kroku podľa roadmapy: *„vysvetliť, prečo ROC-AUC klame pri nevyvážených dátach“*. Ďalší projekt (P2, odchod zákazníkov) je klasifikácia, kde odíde len menšina zákazníkov. Zlá metrika tam znamená výber zlého modelu. Aby som to vedel poriadne vysvetliť, potrebujem najprv tri kúsky pravdepodobnosti:
 1. čo je rozdelenie, priemer a rozptyl, a prečo viac dát znamená menej šumu;
